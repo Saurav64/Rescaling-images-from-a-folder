@@ -1,0 +1,22 @@
+from PIL import Image
+import numpy as np
+import glob
+import uuid
+import random
+image_list = []
+src_dir = "/home/slarde/Documents/images/superheroes/"
+dst_dir = "/home/slarde/Documents/images/scaled_superheroes/"
+x=0
+for filename in glob.glob('/home/slarde/Documents/images/superheroes/*.jpg'):
+    im=Image.open(filename)
+    im= im.resize((1080,720), Image.ANTIALIAS)
+    x +=1
+    print("This is %d image" %(x) )
+    outfile = '/home/slarde/Documents/images/scaled_superheroes/%s.jpg' % (random.randint(1,1000))   
+    im.save(outfile , quality=95)
+    
+    
+  
+
+
+
